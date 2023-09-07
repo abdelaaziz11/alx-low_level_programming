@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - this is the main function
+ * main - A program that prints a line with puts function
  *
- * Return: alwas 0
+ * Return: 0 (Success)
  */
 
-int main(void) {
+int main(void)
+{
     puts("\"Programming is like building a multilingual puzzle");
     return (0);
 }
