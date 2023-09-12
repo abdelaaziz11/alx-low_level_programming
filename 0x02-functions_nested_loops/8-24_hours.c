@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * main - Entry point
  * Description: jack_bauer - prints rvery minute od the day
  *
  * Return: Alwas0 (Success)
