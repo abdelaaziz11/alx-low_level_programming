@@ -6,10 +6,10 @@
  * by space and number should be
  * printed in order
  *
- * @n: input
+ * @c: input
 */
 
-void print_to_98(int n)
+void print_to_98(int c)
 {
 	int count;
 
