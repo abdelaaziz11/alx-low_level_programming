@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * Description: jack_bauer - prints rvery minute od the day
- *
- * Return: Alwas0 (Success)
+ * jack_bauer - prints rvery minute od the day
 */
 
 void jack_bauer(void)
