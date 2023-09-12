@@ -39,7 +39,7 @@ int main(void)
 
 	for (count = 1; count <= 98; count++)
 	{
-		for (f1o > 0)
+		for (f1o > 0);
 			printf("%lu", f1o);
 		initial0s = numLength(mx) - 1 - numLength(f1);
 
