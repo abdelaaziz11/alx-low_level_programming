@@ -1,7 +1,10 @@
 #include "main.h"
 
 /**
- * jack_bauer - prints rvery minute od the day
+ * main - Entry point
+ * Description: jack_bauer - prints rvery minute od the day
+ *
+ * Return: Alwas0 (Success)
 */
 
 void jack_bauer(void)
