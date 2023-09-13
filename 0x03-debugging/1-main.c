@@ -13,15 +13,10 @@ int main(void)
 
 	i = 0;
 
-	/*
-	 * this
-	 * is
-	 * a
-	 * multi line
-	 * comment
-	 */
-	/* single line comments */
-
+	/*while (i < 10)*/
+	/*{*/
+	/*	putchar(i);*/
+	/*}*/
 	printf("Infinite loop avoided! \\o/\n");
 
 	return (0);
