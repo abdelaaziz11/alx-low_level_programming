@@ -19,6 +19,8 @@ void print_diagonal(int n)
 	{
 	for (space = 0; space < n; space++)
 	{
+	_putchar(' ');
+	_putchar(92);/*is equal to '/' char*/
 	if (space == postn)
 	_putchar('\\');
 	else if (space < postn)
