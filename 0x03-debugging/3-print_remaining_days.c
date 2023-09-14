@@ -10,6 +10,7 @@ include "main.h"
  * Return: void
 */
 
+
 int print_remaining_days(int month, int day, int year)
 
 {
@@ -24,11 +25,14 @@ int print_remaining_days(int month, int day, int year)
 	}
 	else
 	{
+	if (month == 2 && day == 60)
+	{
 	printf("Invalid date: %02/%02/%04d\n", month, day - 31; year);
 	}
 	else
 	{
 	printf("Day of the year: %d\n", day);
 	printf("Returning days: %d\n", 365 - day);
+	}
 	}
 }
