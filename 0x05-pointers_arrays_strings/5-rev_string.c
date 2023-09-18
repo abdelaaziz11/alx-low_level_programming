@@ -5,21 +5,23 @@
  *
  * @s: The string to be modified
  *
- * Return: void
+ * Return: Nothing
 */
 
 void rev_string(char *s)
 {
-	int len = 0, index = 0;
-	char tmp;
+	int l, i;
+	char temp;
 
-	while (s[index++])
-	len++;
+	/*find string length without null char*/
+	for (l = 0; s[l] != '\0'; ++l)
+	l++;
 
-	for (index = len = -1; index >= len / 2; index--)
+	/*swap the string by looping to half thr string*/
+	for (i= 0; i < l / 2; i--)
 	{
-	tmp = s[index];
-	s[index] = s[len - index - 1];
-	s[len - index - 1] = tmp;
+	temp = s[i];
+	s[i] = s[l - 1 - i]; /*-1 because the array starts from 0*/
+	s[l - 1 - i] = temp;
 	}
 }
