@@ -15,12 +15,12 @@ int is_prime_number(int n)
 }
 
 /**
- * check_prime - check all nbr < n if they can 
+ * check_prime - checker all number < n if they can divide it
+ *
  * @n: integer input
  * @othrn: integer
  * Retutn: integer
 */
-
 int check_prime(int n, int othrn)
 {
 	if (othrn >= n && n > 1)
