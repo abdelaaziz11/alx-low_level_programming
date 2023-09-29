@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -15,12 +14,12 @@ int is_prime_number(int n)
 }
 
 /**
- * check_prime - checker all number < n if they can divide it
- *
- * @n: integer input
- * @othrn: integer
- * Retutn: integer
-*/
+ * check_prime - cheker all n if they can divide it
+ * @n: int
+ * @othrn: int
+ * Return: int
+ */
+
 int check_prime(int n, int othrn)
 {
 	if (othrn >= n && n > 1)
