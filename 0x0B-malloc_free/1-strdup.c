@@ -20,6 +20,12 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 	c = (char *)malloc(7 * sizeof(char));
+
+	if (c == NULL)
+	{
+		return (NULL);
+	}
+
 	for (i = 0; i < 7; i++)
 	{
 		c[i] = str[i];
