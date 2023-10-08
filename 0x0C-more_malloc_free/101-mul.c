@@ -40,6 +40,27 @@ int _atoi(char *s)
 	}
 	return (result);
 }
+
+/**
+ * print_integer - prints an integer
+ * @m: intreger
+ * Return: 0
+*/
+
+void print_integer(unsigned long int m)
+{
+	unsigned long int div = 1, i, res;
+
+	for (i = 0; m / div > 9; i++, div *= 10)
+		;
+
+	for (; div >= 1; m %= div, div /= 10)
+	{
+		res = m / div;
+		putchar('0' + res);
+	}
+}
+
 /**
   * main - main function call
   * @argc: argument count
