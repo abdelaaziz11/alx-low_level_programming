@@ -11,8 +11,7 @@
  */
 int main(int argc, char **argv)
 {
-	char *p = (char *)main;
-	int b;
+	int i, b;
 
 	if (argc != 2)
 		printf("Error\n"), exit(1);
@@ -20,7 +19,13 @@ int main(int argc, char **argv)
 	if (b < 0)
 		printf("Error\n"), exit(2);
 
-	while (--b)
-		printf("%02hhx%s", *p++, b ? " " : "\n");
+	for (i = 0; i < b; i++)
+	{
+		printf("%02hhx", *((char *)main + i));
+		if (i < b - 1)
+			printf(" ");
+		else
+			printf("\n");
+	}
 	return (0);
 }
