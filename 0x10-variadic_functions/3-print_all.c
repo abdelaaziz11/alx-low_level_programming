@@ -2,75 +2,96 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include "variadic_functions.h"
-/**
- * format_int - prints an int
- * @args: the list of args
- * @separator: string
- */
-void format_int(char *separator, va_list args)
-{
-	printf("%s%d", separator, va_arg(args, int));
-}
-/**
- * format_char - prints a char
- * @args: the list of args
- * @separator: string
- */
-void format_char(char *separator, va_list args)
-{
-	printf("%s%c", separator, va_arg(args, int));
-}
-/**
- * format_string - prints a string
- * @args: the list of args
- * @separator: string
- */
-void format_string(char *separator, va_list args)
-{
-	char *str = va_arg(args, char *);
 
-	switch ((int)(!str))
-		case 1:
-			str = "(nil)";
-
-	printf("%s%s", separator, str);
-}
 /**
- * format_float - prints floats
- * @args: the list of args
- * @separator: string
+ * format_char - printfs a char from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
  */
-void format_float(char *separator, va_list args)
+void format_char(va_list list)
 {
-	printf("%s%f", separator, va_arg(args, double));
+	printf("%c", (char) va_arg(list, int));
 }
 
 /**
- * print_all - prints all
- * @format: formats of arg
+ * format_int - printfs an int from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void format_int(va_list list)
+{
+	printf("%d", va_arg(list, int));
+}
+
+/**
+ * format_float - printfs a float from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void format_float(va_list list)
+{
+	printf("%f", (float) va_arg(list, double));
+}
+
+/**
+ * format_string - printfs a string from var args
+ *
+ * @list: va_list to print from
+ *
+ * Return: void
+ */
+void format_string(va_list list)
+{
+	char *str = va_arg(list, char*);
+
+	while (str != NULL)
+	{
+		printf("%s", str);
+		return;
+	}
+	printf("(nil)");
+}
+
+
+/**
+ * print_all - prints various types given a format string for the arguments
+ *
+ * @format: string containing type information for args
+ *
+ * Return: void
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, j;
-	char *separator = "";
-	va_list args;
-	token_t tokens[] = {{"c", format_char}, {"i", format_int}, {"f", format_float}, {"s", format_string}, {NULL, NULL}};
+	const char *ptr;
+	va_list list;
+	funckey key[4] = { {format_char, 'c'}, {format_int, 'i'},
+			   {format_float, 'f'}, {format_string, 's'} };
+	int keyind = 0, notfirst = 0;
 
-	va_start(args, format);
-	while (format && format[i])
+	ptr = format;
+	va_start(list, format);
+	while (format != NULL && *ptr)
 	{
-		j = 0;
-		while (tokens[j].token)
+		if (key[keyind].spec == *ptr)
 		{
-			if (format[i] == tokens[j].token[0])
-			{
-				tokens[j].f(separator, args);
-				separator = ", ";
-			}
-			j++;
+			if (notfirst)
+				printf(", ");
+			notfirst = 1;
+			key[keyind].f(list);
+			ptr++;
+			keyind = -1;
 		}
-		i++;
+		keyind++;
+		ptr += keyind / 4;
+		keyind %= 4;
 	}
 	printf("\n");
-	va_end(args);
+
+	va_end(list);
 }
