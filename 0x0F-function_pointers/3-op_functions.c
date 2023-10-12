@@ -4,7 +4,7 @@
 /**
  * op_add - add operations
  * @a: input
- * @binput
+ * @b: input
  * Return: sum
  */
 
