@@ -1,18 +1,15 @@
-section .data
-	hello db "Hello, Holberton",10, 0 ; The string to print (with a newline and null terminator)
-	format db "%s", 10, 0 ; The format string for printf
+global main
+extern printf
 
-section .text
-	global main
-
-	extern printf
-
+	section .text
 main:
 	push rbp
-	mov rdi, format		; Set the format string
-	mov rdi, hello		; Set the string adress
-	call printf		; Call printf
-	add esp, 8 		; Adjust the stack pointer
-	xor rax, rax		; Return 0
+	mov rdi, format
+	mov rsi, message
+	mov rax, 0
+	call printf
 	pop rbp
+	mov rax, 0
 	ret
+message: db "Hello, Holberton", 0
+format:	db "%s", 10, 0
