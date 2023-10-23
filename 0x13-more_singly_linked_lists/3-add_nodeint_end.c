@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 /**
- * add_nodrint_end - adds new node elements at the end of listint_t list
+ * add_nodeint_end - adds new node elements at the end of listint_t list
  * @head: point to pointer list
  * @n: integer const
  * Return: neumber elements
