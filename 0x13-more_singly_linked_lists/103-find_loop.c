@@ -1,12 +1,11 @@
 #include "lists.h"
-#include <stdlib.h>
 
 /**
- * find_listint_l - finds a loop
+ * find_listint_loop - Finds a loop
  * @head: pointer list
  * Return: address of node, NULL
  */
-listint_t *find_listint_l(listint_t *head)
+listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *next, *last;
 

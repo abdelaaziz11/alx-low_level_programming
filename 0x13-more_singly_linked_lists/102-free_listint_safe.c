@@ -2,11 +2,11 @@
 #include <stdlib.h>
 
 /**
- * find_listint_loop - finds a loop
+ * find_listint_l - finds a loop
  * @head: poiter list
  * Return: address of node, NULL
  */
-listint_t *find_listint_loop(listint_t *head)
+listint_t *find_listint_l(listint_t *head)
 {
 	listint_t *next, *last;
 
@@ -38,7 +38,7 @@ size_t free_listint_safe(listint_t **h)
 	if (h == NULL || *h == NULL)
 		return (0);
 
-	l_node = find_listint_loop(*h);
+	l_node = find_listint_l(*h);
 	for (length = 0; (*h != l_node || l) && *h != NULL; *h = p)
 	{
 		length++;
