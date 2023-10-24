@@ -4,11 +4,11 @@
 #include <stddef.h>
 
 /**
- * insert_nodeint_at_index - insret new node at given position
- * @head: pointer listint
- * @idx: integer unsigned input
- * @n: integer input
- * Return: address of new node
+ * insert_nodeint_at_index - Insert a new node at a given position
+ * @head: A pointer to a pointer to the head of the list
+ * @idx: The index to insert the new node
+ * @n: The data for the new node
+ * Return: Address of the new node or NULL
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
@@ -16,21 +16,35 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int count = 0;
 
 	if (!head)
-		return (NULL);
-	if (count != idx)
-		return (NULL);
+	return (NULL);
 
-	new_node = (listint_t *) malloc(sizeof(listint_t));
+	new_node = malloc(sizeof(listint_t));
 	if (!new_node)
 		return (NULL);
 
 	new_node->n = n;
+
+	if (idx == 0)
+	{
+		new_node->next = *head;
+		*head = new_node;
+		return (new_node);
+	}
+
 	while (current && count < idx - 1)
 	{
 		current = current->next;
 		count++;
 	}
-	new_node->next = current;
-	*head = new_node;
+
+	if (count != idx - 1 || !current)
+	{
+	free(new_node);
+	return (NULL);
+	}
+
+	new_node->next = current->next;
+	current->next = new_node;
+
 	return (new_node);
 }
