@@ -6,22 +6,43 @@
  * @n: input
  * Return: void
  */
-
 void print_binary(unsigned long int n)
 {
-	int i;
-	int c = sizeof(n) * 8;
-	int z = 1;
+	signed long int s;
+	char c;
+	int z;
 
-	for (i = (c - 1); i >= 0; i--)
+	s = sizeof(n) * 8 - 1;
+
+	if (n == 0)
 	{
-		unsigned long int b = (n >> i) & 1;
-
-		if (b)
-			z = 0;
-		if (!z)
-			printf("%lu", b);
-	}
-	if (z)
 		printf("0");
+		return;
+	}
+
+	if (n == 1)
+	{
+		printf("1");
+		return;
+	}
+
+	z = 0;
+
+	while (s >= 0)
+	{
+		c = (n >> s) & 1;
+
+		if (z == 1)
+			putchar(c + '0');
+		else
+		{
+			if (c == 1)
+			{
+				putchar(c + '0');
+				z = 1;
+			}
+		}
+
+		s -= 1;
+	}
 }
