@@ -8,19 +8,18 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int len;
-	int total = 0, dec_val = 1, i;
+	unsigned int total = 0;
 
-	len = strlen(b);
 	if (!b)
 		return (0);
-	for (i = (len - 1); i >= 0; i--)
+	while (*b != '\0')
 	{
-		if (b[i] != '1' && b[i] != '0')
+		total = total << 1;
+		if (*b != '1' && *b != '0')
 			return (0);
-		else if (b[i] == '1')
-			total += dec_val;
-		dec_val *= 2;
+		else if (*b == '1')
+			total = total | 1;
+		b++;
 	}
 	return (total);
 }
