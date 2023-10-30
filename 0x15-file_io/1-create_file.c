@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * craete_file - Create a file
+ * create_file - Create a file
  * @filename: parameter pointer
  * @text_content: string
  * Return: 1 on success, -1 on failure
