@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 /**
- *
  * read_textfile - reads a text file and prints it to the POSIX standard output
  * @filename: pointer file
  * @letters: input
@@ -30,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	bytes_read = fread(buffer, 1, letters, fp);
-	if (bytes_read == - 1)
+	if (bytes_read == -1)
 	{
 		fclose(fp);
 		free(buffer);
