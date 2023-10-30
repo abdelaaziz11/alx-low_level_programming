@@ -19,7 +19,7 @@ size_t _strlen(char *str)
 }
 /**
  * append_text_to_file - appends a text at the end of a file
- * @filename: string 
+ * @filename: string
  * @text_content: string
  * Return: 1 on success and -1 on failure
  */
