@@ -1,11 +1,9 @@
 #include "main.h"
-
 #define USAGE "Usage: file_from file_to\n"
 #define ERR_NOREAD "Error: Can't read from file %s\n"
 #define ERR_NOWRITE "Error: Can't write to %s\n"
 #define ERR_NOCLOSE "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
-
 /**
  * main - copies the content of a file to another file
  * @ac: number of arguments
@@ -37,5 +35,10 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_from), exit(100);
 	if (fd_to)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_to), exit(100);
-	return (1);
+	if (close(fd_from) == -1 ||	close(fd_to) == -1)
+	{
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, (close(fd_from) == -1) ? fd_from : fd_to);
+		exit(100);
+	}
+	return (EXIT_SUCCESS);
 }
