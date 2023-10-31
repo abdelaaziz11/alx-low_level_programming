@@ -37,5 +37,5 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_from), exit(100);
 	if (fd_to)
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_to), exit(100);
-	return (EXIT_SUCCESS);
+	return (1);
 }
