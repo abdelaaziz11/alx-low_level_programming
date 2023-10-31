@@ -33,7 +33,7 @@ int main(int ac, char **av)
 	fd_to = close(fd_to);
 	if (fd_from == -1 ||	fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, E_NOCLOSE, fd_from == -1) ? fd_from : fd_to);
+		dprintf(STDERR_FILENO, E_NOCLOSE, fd_from == -1 ? fd_from : fd_to);
 		exit(100);
 	}
 	return (EXIT_SUCCESS);
