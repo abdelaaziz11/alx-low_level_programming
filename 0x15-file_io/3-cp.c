@@ -16,8 +16,8 @@
 int main(int ac, char *av[])
 {
 	int fd_from = 0, fd_to = 0;
-	char buffer[BUF_SIZE];
 	ssize_t bytes_read;
+	char buffer[BUF_SIZE];
 
 	if (ac != 3)
 		dprintf(STDERR_FILENO, USAGE), exit(97);
