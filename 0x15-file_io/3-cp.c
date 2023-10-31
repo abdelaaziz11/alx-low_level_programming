@@ -5,11 +5,12 @@
 #define ERR_NOWRITE "Error: Can't write to %s\n"
 #define ERR_NOCLOSE "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
+
 /**
  * main - copies the content of a file to another file
  * @ac: number of arguments
  * @av: array pointer value of arguments
- * Return: Always 0
+ * Return: 1 on success 0 on failure
  */
 int main(int ac, char **av)
 {
@@ -26,10 +27,8 @@ int main(int ac, char **av)
 	if (fd_to == -1)
 		dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 	while ((bytes_read = read(fd_from, buffer, BUF_SIZE)) > 0)
-	{
 		if (write(fd_to, buffer, bytes_read) != bytes_read)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
-	}
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
 	fd_from = close(fd_from);
