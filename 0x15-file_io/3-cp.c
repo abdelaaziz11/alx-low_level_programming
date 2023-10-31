@@ -1,7 +1,5 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+
 #define USAGE "Usage: file_from file_to\n"
 #define ERR_NOREAD "Error: Can't read from file %s\n"
 #define ERR_NOWRITE "Error: Can't write to %s\n"
@@ -13,7 +11,7 @@
  * @av: array pointer value of arguments
  * Return: Always 0
  */
-int main(int ac, char *av[])
+int main(int ac, char **av)
 {
 	int fd_from = 0, fd_to = 0;
 	ssize_t bytes_read;
