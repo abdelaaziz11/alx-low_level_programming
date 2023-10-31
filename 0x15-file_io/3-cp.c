@@ -29,12 +29,6 @@ int main(int ac, char **av)
 			dprintf(STDERR_FILENO, ERR_NOWRITE, av[2]), exit(99);
 	if (bytes_read == -1)
 		dprintf(STDERR_FILENO, ERR_NOREAD, av[1]), exit(98);
-	fd_from = close(fd_from);
-	fd_to = close(fd_to);
-	if (fd_from)
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_from), exit(100);
-	if (fd_to)
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, fd_to), exit(100);
 	if (close(fd_from) == -1 ||	close(fd_to) == -1)
 	{
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, (close(fd_from) == -1) ? fd_from : fd_to);
