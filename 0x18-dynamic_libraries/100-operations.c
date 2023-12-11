@@ -1,16 +1,6 @@
 #include <stdio.h>
 
 /**
- * mul - mutplication
- * @a: a
- * @b: b
- * Return: number
- */
-int mul(int a, int b)
-{
-	return (a * b);
-}
-/**
  * add - addition
  * @a: a
  * @b: b
@@ -29,6 +19,16 @@ int add(int a, int b)
 int sub(int a, int b)
 {
 	return (a - b);
+}
+/**
+ * mul - mutplication
+ * @a: a
+ * @b: b
+ * Return: number
+ */
+int mul(int a, int b)
+{
+	return (a * b);
 }
 /**
  * div - division
