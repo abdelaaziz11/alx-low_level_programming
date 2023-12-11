@@ -2,6 +2,8 @@
 
 /**
  * mul - mutplication
+ * @a: a
+ * @b: b
  * Return: number
  */
 int mul(int a, int b)
@@ -10,6 +12,8 @@ int mul(int a, int b)
 }
 /**
  * add - addition
+ * @a: a
+ * @b: b
  * Return: number
  */
 int add(int a, int b)
@@ -18,6 +22,8 @@ int add(int a, int b)
 }
 /**
  * sub - sub
+ * @a: a
+ * @b: b
  * Return: number
  */
 int sub(int a, int b)
@@ -26,6 +32,8 @@ int sub(int a, int b)
 }
 /**
  * div - division
+ * @b: b
+ * @a: a
  * Return: number
  */
 int div(int a, int b)
@@ -33,12 +41,14 @@ int div(int a, int b)
 	if (b == 0)
 	{
 		printf("Error: 0\n");
-		return 0;
+		return (0);
 	}
 	return (a / b);
 }
 /**
  * mod - modulas
+ * @a: a
+ * @b: b
  * Return: number
  */
 int mod(int a, int b)
@@ -46,6 +56,6 @@ int mod(int a, int b)
 	if (b == 0)
 	{
 		printf("Error: 0\n");
-		return 0;
+		return (0);
 	return (a % b);
 }
