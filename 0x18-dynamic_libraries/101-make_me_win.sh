@@ -1,3 +1,3 @@
 #!/bin/bash
-wget -P /tmp https://github.com/abdelaaziz11/alx/raw/main/0x18%20C%20-%20Dynamic%20libraries/libgiga.so
+wget -P /tmp https://github.com/abdelaaziz11/alx-low_level_programming/raw/master/0x18-dynamic_libraries/libgiga.so
 export LD_PRELOAD=/tmp/libgiga.so
