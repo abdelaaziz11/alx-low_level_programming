@@ -39,7 +39,7 @@ int _binary_search(int *array, size_t left, size_t right, int value)
 /**
   * exponential_search - Searches for a value in a sorted array
   * using the Exponential search algorithm
-  * @arraythe array
+  * @array: the array
   * @size: array size
   * @value: The value
   * Return: If value is not present in array or if array is NULL, 1
